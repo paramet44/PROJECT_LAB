@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            const data = [
+                {id: 6231302008, "name": "NOPPANAN KHAMDUANG" },
+                {id: 6231302010, "name": "PARAMET PAJAPO"},
+                {id: 6231302017, "name": "SAHAPOL POLYIAM"},
+                {id: 6231302021, "name": "ORAWAN KHONGTHIP"}
+
+            ];
+
+            let member = "<thead><tr><th>ID</th> <th>Name</th></tr></thead>";
+
+            $.each(data, function (index, value) { 
+                member += "<tr><td>" + value.id + "</td> <td>" + value.name + "</td></tr>";
+
+            });
+
+            $("#myTable").html(member);
+
+            $("button").click(function () {
+                //clear web storage
+                window.location.replace("index.html");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <table class="table table-striped mt-2" id="myTable">
+        </table>
+
+        <button class="btn btn-primary">Home</button>
+    </div>
+
+
+</body>
+</html>
