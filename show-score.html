@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Score</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btnCal").click(function(){
+                let score1 = parseFloat($("#txtstd1").val()) ;
+                let score2 = parseFloat($("#txtstd2").val()) ;
+                let score3 = parseFloat($("#txtstd3").val()) ;
+                let score4 = parseFloat($("#txtstd4").val()) ;
+
+                console.log(score1);
+
+                let Score = score1+score2+score3+score4;
+                let totalScore = Score/4;
+                $("h5").html("The average score is: " + totalScore.toFixed(2));
+            })
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="container-fluid mt-3 ml-3">
+        <h3>Member Score</h3> <br>
+        <p>6231302008  NOPPANAN KHAMDUANG </p><input type="number" id="txtstd1">
+        <p>6231302010  PARAMET PAJAPO</p> <input type="number" id="txtstd2">
+        <p>6231302017  SAHAPOL POLYIAM</p> <input type="number" id="txtstd3">
+        <p>6231302021  ORAWAN KHONGTHIP</p> <input type="number" id="txtstd4">
+        <br>
+        <button class="btn btn-primary m-2 mt-3" id="btnCal">Calculate</button>
+        <h5 class="mt-2">The average score is: </h5>
+    </div>
+</body>
+</html>
