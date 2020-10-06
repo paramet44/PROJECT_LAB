@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching member</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/cerulean/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var list = [
+                { "name": "Noppanan", "lastname": "Khamduang", "age": 20, "id": "6231302008" },
+                { "name": "Paramet", "lastname": "Pejapo", "age": 19, "id": "6231302010" },
+                { "name": "Sahapol", "lastname": "Polyiam", "age": 18, "id": "6231302017" },
+                { "name": "Orawan", "lastname": "Khongthip", "age": 19, "id": "6231302021" },
+            ]
+
+            $("#BTN").click(function () {
+                // alert(list[0].id)
+                // console.log(list[0].id)
+                let ID = $("#IDsearch").val();
+                let result = "Non of member";
+                for (let i = 0; i < list.length; i++) {
+                    if (list[i].id == ID) {
+                        result = "<thead><tr><th>Name</th><th>Lastname</th><th>age</th></tr></thead>" + `<tr><td>${list[i].name}</td><td>${list[i].lastname}</td><td>${list[i].age}</td></tr>`;
+                    }
+                } 
+                $("#TableResult").html(result)
+            })
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="jumbotron ">
+            <div class="container">
+                <h1 class="display-5">Plaese Input ID to search</h1>
+                <div class="form-group">
+            <label for=""></label>
+            <input type="text" class="form-control mb-2" name="" id="IDsearch" aria-describedby="helpId" placeholder="">
+            <button type="button" class="btn btn-primary mb-2" id="BTN">Search</button>
+            </div>
+        </div>
+
+            <table class="table" id="TableResult">
+
+            </table>
+
+
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>
